@@ -15,7 +15,8 @@ cls_log.setLevel(logging.DEBUG)
 
 bot = Client(
     token=TOKEN,
-    intents=Intents.DEFAULT | Intents.MESSAGE_CONTENT | Intents.GUILD_MESSAGES,
+    intents=Intents.DEFAULT | Intents.MESSAGE_CONTENT | Intents.GUILD_MESSAGES | Intents.GUILDS |
+    Intents.GUILD_INVITES | Intents.GUILD_MEMBERS | Intents.ALL,
     sync_interactions=True,
     asyncio_debug=True,
     logger=cls_log,
@@ -31,6 +32,7 @@ async def on_ready():
 
 bot.load_extension("Commands.ping")
 bot.load_extension("Commands.verify")
+bot.load_extension("Events.welcome")
 
 try:
     bot.start()
