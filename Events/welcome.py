@@ -11,10 +11,10 @@ class WelcomeEvent(Extension):
         channel_id = cfg.get("WELCOME_CHANNEL_ID")
         channel = ctx.guild.get_channel(channel_id)
         # Tworzenie embeda
-        embed = Embed(title="New user!", description=f"👋🏼 Welcome on our serwer, {ctx.member.user.mention}!")
-        embed.set_thumbnail(url=ctx.member.avatar_url)
+        #embed = Embed(title="New user!", description=f"👋🏼 Welcome on our serwer, {ctx.member.user.mention}!")
+        #embed.set_thumbnail(url=ctx.member.avatar_url)
 
         # Wysłanie embeda na kanał
-        await channel.send(embed=embed)
+        await channel.send(f"👋🏼  **Welcome on ControlByte's discord server,** {ctx.member.user.mention}!")
 
 
